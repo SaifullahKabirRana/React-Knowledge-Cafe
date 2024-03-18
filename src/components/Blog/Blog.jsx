@@ -20,18 +20,20 @@ const Blog = ({ blog, handleAddToBookmark }) => {
                 <div>
                     <div className='text-[#11111199] text-xl font-medium flex gap-3'>
                         <span>{reading_time} min read</span>
-                        <button className='text-2xl' onClick={handleAddToBookmark}>
+                        <button className='text-2xl'
+                         onClick={() => handleAddToBookmark(blog)}>
                             <LuBookmark></LuBookmark>
-                            </button>
+                        </button>
                     </div>
                 </div>
             </div>
-            <h2 className='text-[40px] text-[#111111] font-bold mb-4'>{title}</h2>
+            <h2 className=' bg text-[40px] text-[#111111] font-bold mb-4'>{title}</h2>
             <p>
                 {
-                    hashtags.map((hash, idx) => <span className='mx-2 text-xl text-[#11111199]  font-medium' key={idx}><a  href='#'>#{hash}</a></span>)
+                    hashtags.map((hash, idx) => <span className='mx-2 text-xl text-[#11111199]  font-medium' key={idx}><a href='#'>#{hash}</a></span>)
                 }
             </p>
+            <h3 className=''>hdhd</h3>
 
 
         </div>
@@ -39,7 +41,8 @@ const Blog = ({ blog, handleAddToBookmark }) => {
 };
 
 Blog.propTypes = {
-    blog: PropTypes.object.isRequired
+    blog: PropTypes.object.isRequired,
+    handleAddToBookmark: PropTypes.func.isRequired
 }
 
 export default Blog;
