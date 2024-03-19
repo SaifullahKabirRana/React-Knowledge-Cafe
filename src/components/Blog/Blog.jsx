@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { LuBookmark } from "react-icons/lu";
 
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
-    const { cover, title, author_img, author, posted_date, reading_time, hashtags } = blog;
+    const {id, cover, title, author_img, author, posted_date, reading_time, hashtags } = blog;
 
     return (
         <div className='mb-20'>
@@ -34,7 +34,7 @@ const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
                 }
             </p>
             <button
-                onClick={() => handleMarkAsRead(reading_time)}
+                onClick={() => handleMarkAsRead(id,reading_time)}
                 className='text-[#6047EC] underline text-xl font-semibold mt-6'>Mark As Read</button>
 
         </div>
